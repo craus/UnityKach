@@ -11,5 +11,9 @@ public class Controls : Singletone<Controls>
                 HoverManager.instance.hoveredCreatureView.MouseDown();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.R)) {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        }
     }
 }

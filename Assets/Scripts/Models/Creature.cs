@@ -8,6 +8,7 @@ public class Creature : Model
 {
     public const float BASE_EAT_TIME = 1;
     public const float BASE_DIE_TIME = 10;
+    public const int SACRIFITION_DELTA = 3;
 
     /// <summary>
     /// Use view.transform.position whenever possible

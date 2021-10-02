@@ -13,6 +13,8 @@ public class Timer
 
     public float spentPart => spent / (duration + float.Epsilon);
 
+    public float finish => start + duration;
+
     public Timer(float duration, float start) {
         this.duration = duration;
         this.start = start;
