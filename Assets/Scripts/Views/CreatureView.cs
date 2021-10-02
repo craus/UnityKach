@@ -73,7 +73,7 @@ public class CreatureView : View<Creature>
         for (int i = 0; i < 1000; i++) {
             RandomizeLocation();
 
-            float minDistanceToOthers = GameManager.instance.worldView.creatureViews.Except(this).Min(c => Vector2.Distance(transform.position, c.transform.position));
+            float minDistanceToOthers = GameManager.instance.worldView.creatureViews.Except(this).ExtMin(c => Vector2.Distance(transform.position, c.transform.position));
             if (minDistanceToOthers > preferredDistance) {
                 break;
             }
