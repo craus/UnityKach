@@ -14,7 +14,7 @@ public class CreatureView : View<Creature>
 
     public TMPro.TextMeshProUGUI levelText;
 
-    public float BaseRadius => 1;
+    public float BaseRadius => 1f;
 
     public float Radius => BaseRadius * (1 + 0.25f * model.level);
 
