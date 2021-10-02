@@ -33,7 +33,11 @@ public class CreatureView : View<Creature>
         if (model.die.spentPart > 1) {
             Die();
         }
+
+        levelText.color = CannotEat ? Color.red : Color.black;
     }
+
+    public bool CannotEat => model.level >= Creature.SACRIFITION_DELTA && Sacrifition == null;
 
     public void Eat() {
         if (model.eat.spentPart < 1) {
@@ -123,6 +127,6 @@ public class CreatureView : View<Creature>
         var emission = explosion.emission;
         emission.rateOverTimeMultiplier *= 1 + model.level;
 
-        explosion.GetComponent<DestroyAfterLifeTime>().lifeTime *= 1 + 100 * model.level / 3f;
+        explosion.GetComponent<DestroyAfterLifeTime>().lifeTime *= 1 + model.level / 3f;
     }
 }
