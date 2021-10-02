@@ -21,5 +21,9 @@ public class Controls : Singletone<Controls>
         if (Input.GetKeyDown(KeyCode.R)) {
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         }
+
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Pause)) {
+            TimeManager.instance.Paused ^= true;
+        }
     }
 }

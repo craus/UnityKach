@@ -11,6 +11,17 @@ public class TimeManager : Singletone<TimeManager>
 {
 	static PromiseTimer promiseTimer = new PromiseTimer();
 
+    private bool paused = false;
+    public bool Paused
+    {
+        get => paused;
+        set
+        {
+            paused = value;
+            UnityEngine.Time.timeScale = paused ? 0 : 1;
+        }
+    }
+
     static float lastUpdateTime = 0;
 
     public static float Time() {
