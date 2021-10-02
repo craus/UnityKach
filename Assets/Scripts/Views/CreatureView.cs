@@ -6,7 +6,13 @@ public class CreatureView : View<Creature>
 {
     public Transform mainTransform;
 
+    public float BaseRadius => 1;
+
+    public float Radius => BaseRadius * (1 + 0.25f * model.level);
+
+    public bool ContainsPoint(Vector2 point) => Vector2.Distance(transform.position, point) < Radius;
+
     public void Update() {
-        mainTransform.localScale = Vector3.one * (1 + 0.25f * model.level);
+        mainTransform.localScale = 2 * Radius * Vector3.one;
     }
 }
