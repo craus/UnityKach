@@ -25,5 +25,12 @@ public class Controls : Singletone<Controls>
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Pause)) {
             TimeManager.instance.Paused ^= true;
         }
+
+        if (Input.GetKeyDown(KeyCode.F)) {
+            Time.timeScale *= 2;
+        }
+        if (Input.GetKeyDown(KeyCode.S)) {
+            Time.timeScale /= 2;
+        }
     }
 }
