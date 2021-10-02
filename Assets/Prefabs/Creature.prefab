@@ -727,6 +727,7 @@ MonoBehaviour:
   pieEat: {fileID: 857792955493320345}
   pieDie: {fileID: 2220192642122061560}
   levelText: {fileID: 8090664202846625356}
+  explosionSample: {fileID: 3186130100932542553, guid: 0f426f9bd2cd1cd43b7771a53eecc556, type: 3}
 --- !u!1 &5475089845893262278
 GameObject:
   m_ObjectHideFlags: 0

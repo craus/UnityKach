@@ -20,6 +20,8 @@ public class CreatureView : View<Creature>
 
     public bool ContainsPoint(Vector2 point) => Vector2.Distance(transform.position, point) < Radius;
 
+    public ParticleSystem explosionSample;
+
     public void Update() {
         mainTransform.localScale = 2 * Radius * Vector3.one;
 
@@ -27,6 +29,10 @@ public class CreatureView : View<Creature>
         pieDie.fillAmount = model.die.spentPart;
 
         levelText.text = model.level.ToString();
+
+        if (model.die.spentPart > 1) {
+            Die();
+        }
     }
 
     public void MouseDown() {
@@ -91,5 +97,11 @@ public class CreatureView : View<Creature>
             return;
         }
         GameManager.instance.worldView.creatureViews.Remove(this);
+    }
+
+    public void Die() {
+        Destroy(gameObject);
+        var explosion = Instantiate(explosionSample);
+        explosion.transform.position = transform.position;
     }
 }
