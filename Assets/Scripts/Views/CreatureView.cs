@@ -31,7 +31,11 @@ public class CreatureView : View<Creature>
         levelText.text = model.level.ToString();
 
         if (model.die.spentPart > 1) {
-            Die();
+            if (CannotEat) {
+                Die();
+            } else {
+                Eat();
+            }
         }
 
         levelText.color = CannotEat ? Color.red : Color.black;
