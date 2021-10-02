@@ -6,9 +6,15 @@ using UnityEngine;
 public class Controls : Singletone<Controls>
 {
     public void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            if (HoverManager.instance.hoveredCreatureView != null) {
-                HoverManager.instance.hoveredCreatureView.MouseDown();
+        if (HoverManager.instance.hoveredCreatureView != null) {
+            if (Input.GetMouseButtonDown(0)) {
+                HoverManager.instance.hoveredCreatureView.Eat();
+            }
+            if (Input.GetKeyDown(KeyCode.X)) {
+                HoverManager.instance.hoveredCreatureView.Die();
+            }
+            if (Input.GetKeyDown(KeyCode.L)) {
+                HoverManager.instance.hoveredCreatureView.LevelUp();
             }
         }
 

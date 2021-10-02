@@ -35,7 +35,7 @@ public class CreatureView : View<Creature>
         }
     }
 
-    public void MouseDown() {
+    public void Eat() {
         if (model.eat.spentPart < 1) {
             return;
         }
@@ -46,6 +46,10 @@ public class CreatureView : View<Creature>
             }
             Devour(Sacrifition);
         }
+        LevelUp();
+    }
+
+    public void LevelUp() {
         model.level++;
         model.eat.duration = model.die.duration = model.eat.spent;
         ResetTimers();
@@ -103,5 +107,22 @@ public class CreatureView : View<Creature>
         Destroy(gameObject);
         var explosion = Instantiate(explosionSample);
         explosion.transform.position = transform.position;
+
+        var main = explosion.main;
+
+        var slt = main.startLifetime;
+        slt.constantMin *= 1 + model.level / 3f;
+        slt.constantMax *= 1 + model.level / 3f;
+        main.startLifetime = slt;
+
+        var ss = main.startSpeed;
+        ss.constantMin *= 1 + model.level / 3f;
+        ss.constantMax *= 1 + model.level / 3f;
+        main.startSpeed = ss;
+
+        var emission = explosion.emission;
+        emission.rateOverTimeMultiplier *= 1 + model.level;
+
+        explosion.GetComponent<DestroyAfterLifeTime>().lifeTime *= 1 + 100 * model.level / 3f;
     }
 }

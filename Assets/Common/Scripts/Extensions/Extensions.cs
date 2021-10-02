@@ -20,7 +20,7 @@ public static class Extensions
             $"{mx.m30,x:0.####################}{s}{mx.m31,x:0.####################}{s}{mx.m32,x:0.####################}{s}{mx.m33,x:0.####################}{s}\n";
     }
 
-    public static TResult Tap<TObject, TResult>(this TObject obj, Func<TObject, TResult> func)
+    public static TResult Tapp<TObject, TResult>(this TObject obj, Func<TObject, TResult> func)
     {
         return func(obj);
     }
