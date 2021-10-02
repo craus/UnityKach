@@ -87,6 +87,9 @@ public class CreatureView : View<Creature>
     }
 
     public void OnDestroy() {
+        if (GameManager.instance == null) {
+            return;
+        }
         GameManager.instance.worldView.creatureViews.Remove(this);
     }
 }
