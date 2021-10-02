@@ -34,7 +34,11 @@ public class CreatureView : View<Creature>
             if (CannotEat) {
                 Die();
             } else {
-                Eat();
+                if (Controls.instance.autoplay) {
+                    Eat();
+                } else {
+                    AlsoDie();
+                }
             }
         }
 
@@ -109,6 +113,10 @@ public class CreatureView : View<Creature>
             return;
         }
         GameManager.instance.worldView.creatureViews.Remove(this);
+    }
+
+    public void AlsoDie() {
+        Die();
     }
 
     public void Die() {

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Controls : Singletone<Controls>
 {
+    public bool autoplay = false;
+
     public void Update() {
         if (HoverManager.instance.hoveredCreatureView != null) {
             if (Input.GetMouseButtonDown(0)) {
@@ -31,6 +33,10 @@ public class Controls : Singletone<Controls>
         }
         if (Input.GetKeyDown(KeyCode.S)) {
             Time.timeScale /= 2;
+        }
+
+        if (Input.GetKeyDown(KeyCode.A)) {
+            autoplay ^= true;
         }
     }
 }
