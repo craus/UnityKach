@@ -4,3 +4,5 @@ Library/
 Logs/
 Temp/
 *.csproj
+.vs/
+obj/

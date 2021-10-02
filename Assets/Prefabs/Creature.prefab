@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5475089845002199133}
+  - component: {fileID: 8789157944856203843}
   m_Layer: 0
   m_Name: Creature
   m_TagString: Untagged
@@ -31,6 +32,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8789157944856203843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5475089845002199132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1399d1675323933408fbf0c5bc26832c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model:
+    timerDuration: 0
+    timerStart: 0
+    level: 1
+  mainTransform: {fileID: 5475089845002199133}
 --- !u!1 &5475089845611464602
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,6 +59,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5475089845611464603}
   - component: {fileID: 5475089845611464596}
+  - component: {fileID: 9186525684812682790}
   m_Layer: 0
   m_Name: circle-512
   m_TagString: Untagged
@@ -57,7 +76,7 @@ Transform:
   m_GameObject: {fileID: 5475089845611464602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1953125, y: 0.1953125, z: 0.1953125}
   m_Children: []
   m_Father: {fileID: 5475089845893262279}
   m_RootOrder: 0
@@ -114,6 +133,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9186525684812682790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5475089845611464602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda06b37a3e7a6d4699931f3e4570e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment: scale = 1/512 (512 is a size of image)
 --- !u!1 &5475089845893262278
 GameObject:
   m_ObjectHideFlags: 0
